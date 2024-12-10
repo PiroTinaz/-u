@@ -1,22 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    
-    <
-<meta charset="UTF-8">
-    
-   
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <
-<title>運賃計算ツール</title>
-    
-    <
-<style>
-        bo
-
-       
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運賃計算ツール</title>
+    <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -66,86 +54,20 @@
 </head>
 <body>
     <h1>運賃計算ツール</h1>
-    
-   
-<form id="fareCalculator">
-        
-       
-<label for="totalAmount">合計金額 (円):</label>
+    <form id="fareCalculator">
+        <label for="totalAmount">合計金額 (円):</label>
         <input type="number" id="totalAmount" placeholder="例: 5000" required>
 
-        
+        <label for="households">乗せてもらう世帯数:</label>
+        <input type="number" id="households" placeholder="例: 2" required>
 
-        <
-
-
-      
-
-
-   
-
-
-<label for="households">乗せてもらう世帯数:</label>
-        
-       
-<input type="number" id="households" placeholder="例: 2" required>
-
-        <button type="button" onclick="calculateFare()">計算する</button>
-    
-    </
-</form>
+        <button type="button" id="calculateButton">計算する</button>
+    </form>
 
     <div id="result"></div>
 
     <script>
-        funct
-
-        fu
-
-       
-
-    
-
-        function calculateFare() {
-            const totalAmount = parseFloat(document.getElementById('total
-
-        function calculateFare() {
-            const totalAmount = parseFloat(document.getElementById('totalAmount').value);
-            const households = parseInt(document.getElementById('households
-
-        function calculateFare() {
-            const totalAmount = parseFloat(document.getElementById('totalAmount').value);
-            const households = parseInt(document.getElementById('
-
-        function calculateFare() {
-            const totalAmount = parseFloat(document.getElementById('totalAmount').value);
-            const households = parseInt(document.getElementById('households').value);
-
-            if (isNaN(totalAmount) || isNaN(households) || totalAmount <= 0 || households <= 0) {
-                document.getElementById('re
-
-        function calculateFare() {
-            const totalAmount = parseFloat(document.getElementById('totalAmount').value);
-            const households = parseInt(document.getElementById('households').value);
-
-            if (isNaN(totalAmount) || isNaN(households) || totalAmount <= 0 || households <= 0) {
-                document.getElementById('
-
-        function calculateFare() {
-            const totalAmount = parseFloat(document.getElementById('totalAmount').value);
-            const households = parseInt(document.getElementById('households').value);
-
-            if (isNaN(totalAmount) || isNaN(households) || totalAmount <= 0 || households <= 0) {
-                document.getElementById('result').innerText = "正しい値を入力してください
-
-        function calculateFare() {
-            const totalAmount = parseFloat(document.getElementById('totalAmount').value);
-            const households = parseInt(document.getElementById('households').value);
-
-            if (isNaN(totalAmount) || isNaN(households) || totalAmount <= 0 || households <= 0) {
-                document.getElementById('result').innerText = "正しい値
-
-        function calculateFare() {
+        document.getElementById('calculateButton').addEventListener('click', function () {
             const totalAmount = parseFloat(document.getElementById('totalAmount').value);
             const households = parseInt(document.getElementById('households').value);
 
@@ -159,12 +81,10 @@
             // 乗せてもらう世帯の支払い額
             const passengerShare = 2 * driverShare;
 
-            document.getElementById('result').innerText = 
+            document.getElementById('result').innerText =
                 `運転手の支払い: ${driverShare.toFixed(2)} 円\n` +
                 `1世帯あたりの支払い: ${passengerShare.toFixed(2)} 円`;
-        }
+        });
     </script>
 </body>
-
-</
 </html>
