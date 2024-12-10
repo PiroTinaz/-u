@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>乗せてもらう1世帯の金額計算ツール</title>
+  </head>
+  <body>
+    <h2>乗せてもらう1世帯の金額を計算</h2>
+    <form id="calculator">
+      <label for="totalAmount">合計金額 (円):</label><br>
+      <input type="number" id="totalAmount" required><br><br>
+      <label for="households">運転手家族以外の世帯数:</label><br>
+      <input type="number" id="households" required><br><br>
+      <button type="button" onclick="calculate()">計算</button>
+    </form>
+    <h3>結果:</h3>
+    <p id="result"></p>
+
+    <script>
+      function calculate() {
+        const totalAmount = parseFloat(document.getElementById('totalAmount').value);
+        const households = parseInt(document.getElementById('households').value);
+        
+        const result = totalAmount / (households + 0.5);
+        document.getElementById('result').innerText = '1世帯の金額は: ' + result + ' 円';
+      }
+    </script>
+  </body>
+</html>
